@@ -16,20 +16,33 @@ A .NET library to compute the delta (added, removed, changed objects) between tw
 
 ## Sample Program
 
-Suppose you have two NDJSON files:
+**Scenario: Compare Azure Digital Twin Topology Versions**
 
-**file1.ndjson**
+Suppose you have two NDJSON files containing Azure Digital Twin models and instances:
+
+**topology_v1.ndjson** (Previous version)
 ```json
-{"id": 1, "name": "A"}
-{"id": 2, "name": "B"}
-{"id": 3, "name": "C"}
+{"Section": "Header"}
+{"fileVersion":"1.0.0","author":"TICO","organization":"TICO"}
+{"Section": "Models"}
+{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:toyotaindustries:gaudi:asset;1","@type":"Interface","displayName":"Asset"}
+{"Section": "Twins"}
+{"$dtId":"MachineA10","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
+{"$dtId":"SensorA14","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:sensor;1"}}
+{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:plant;1"}}
 ```
 
-**file2.ndjson**
+**topology_v2.ndjson** (Current version)
 ```json
-{"id": 1, "name": "A"}
-{"id": 2, "name": "B2"}
-{"id": 4, "name": "D"}
+{"Section": "Header"}
+{"fileVersion":"1.0.1","author":"TICO","organization":"TICO"}
+{"Section": "Models"}
+{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:toyotaindustries:gaudi:asset;1","@type":"Interface","displayName":"Asset"}
+{"Section": "Twins"}
+{"$dtId":"MachineA10","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
+{"$dtId":"SensorA15","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:sensor;1"}}
+{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:plant;1"}}
+{"$dtId":"MachineA11","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
 ```
 
 **Sample C# code:**
@@ -43,23 +56,30 @@ class Program
     static void Main()
     {
         var calculator = new NdjsonDeltaCalculator();
-        // Use a key selector for the unique key (e.g., "id")
+        
+        // Compare topology versions using $dtId as the unique key
         NdjsonDeltaResult result = calculator.ComputeDeltaFromFiles(
-            "file1.ndjson", "file2.ndjson", obj => obj.GetProperty("id").GetInt32().ToString());
+            "topology_v1.ndjson", "topology_v2.ndjson", 
+            obj => {
+                // Use $dtId for twins, or generate a key for other objects
+                if (obj.TryGetProperty("$dtId", out var dtId))
+                    return dtId.GetString();
+                if (obj.TryGetProperty("@id", out var id))
+                    return id.GetString();
+                if (obj.TryGetProperty("fileVersion", out var version))
+                    return "fileVersion";
+                return obj.GetRawText().GetHashCode().ToString();
+            });
 
-        Console.WriteLine("Added:");
+        Console.WriteLine("=== Digital Twin Topology Changes ===");
+        Console.WriteLine($"Added Twins/Models: {result.Added.Count}");
+        Console.WriteLine($"Removed Twins/Models: {result.Removed.Count}");
+        Console.WriteLine($"Changed Items: {result.Changed.Count}");
+        
         foreach (var item in result.Added)
-            Console.WriteLine(item);
-
-        Console.WriteLine("Removed:");
-        foreach (var item in result.Removed)
-            Console.WriteLine(item);
-
-        Console.WriteLine("Changed:");
-        foreach (var (oldObj, newObj) in result.Changed)
         {
-            Console.WriteLine($"Old: {oldObj}");
-            Console.WriteLine($"New: {newObj}");
+            if (item.TryGetProperty("$dtId", out var dtId))
+                Console.WriteLine($"Added Twin: {dtId.GetString()}");
         }
     }
 }
@@ -67,17 +87,62 @@ class Program
 
 **Expected Output:**
 ```
-Added:
-{"id":4,"name":"D"}
-Removed:
-{"id":3,"name":"C"}
-Changed:
-Old: {"id":2,"name":"B"}
-New: {"id":2,"name":"B2"}
+=== Digital Twin Topology Changes ===
+Added Twins/Models: 2
+Removed Twins/Models: 1
+Changed Items: 1
+Added Twin: MachineA11
+```
+
+## Azure Blob Storage Support
+
+**Compare two files from Azure Blob Storage:**
+```csharp
+using System.Threading.Tasks;
+using NdjsonDelta;
+
+class Program
+{
+    static async Task Main()
+    {
+        var calculator = new NdjsonDeltaCalculator();
+        string connectionString = "DefaultEndpointsProtocol=https;AccountName=yourstorageaccount;AccountKey=yourkey;EndpointSuffix=core.windows.net";
+        
+        // Compare two topology files stored in different blob containers
+        NdjsonDeltaResult result = await calculator.ComputeDeltaFromBlobsAsync(
+            connectionString, 
+            "topology-archive", "topology_20240301.ndjson",  // Previous version
+            "topology-current", "topology_20240401.ndjson",  // Current version
+            obj => {
+                if (obj.TryGetProperty("$dtId", out var dtId))
+                    return dtId.GetString();
+                if (obj.TryGetProperty("@id", out var id))
+                    return id.GetString();
+                return obj.GetRawText().GetHashCode().ToString();
+            });
+            
+        Console.WriteLine($"Topology changes detected: {result.Added.Count + result.Removed.Count + result.Changed.Count} differences");
+    }
+}
+```
+
+**Compare local file with blob:**
+```csharp
+// Compare local development topology with production blob
+NdjsonDeltaResult result = await calculator.ComputeDeltaFromLocalAndBlobAsync(
+    "local-topology.ndjson", 
+    connectionString, "production-topology", "current.ndjson",
+    obj => obj.TryGetProperty("$dtId", out var dtId) ? dtId.GetString() : obj.GetRawText().GetHashCode().ToString(),
+    localFirst: true);
+```
+
+## Installation
+```bash
+dotnet add package NdjsonDelta
 ```
 
 ## License
-Specify your license here (e.g., MIT, Apache 2.0, etc.).
+MIT License
 
-## Publishing
-See instructions below for publishing to NuGet.org after implementation and packaging.
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
