@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # NdjsonDelta
 
 A .NET library to compute the delta (added, removed, changed objects) between two NDJSON (Newline Delimited JSON) files or strings. Designed for easy integration and NuGet distribution.
@@ -17,7 +16,3 @@ Specify your license here (e.g., MIT, Apache 2.0, etc.).
 
 ## Publishing
 See instructions below for publishing to NuGet.org after implementation and packaging.
-=======
-# ndjson-delta
-COmapring two ndjson files 
->>>>>>> 707e7ed431f6865dae98eb0f5ee892bc536399b4
