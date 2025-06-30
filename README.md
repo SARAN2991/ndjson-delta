@@ -5,6 +5,9 @@ A .NET library to compute the delta (added, removed, changed objects) between tw
 ## Features
 - Compare two NDJSON sources and get added, removed, and changed objects
 - Simple API for file or string input
+- Support for local files and Azure Blob Storage
+- Mixed source comparison (local file vs blob, blob vs blob)
+- Robust JSON parsing with error handling
 - Well-documented public methods
 
 ## Usage

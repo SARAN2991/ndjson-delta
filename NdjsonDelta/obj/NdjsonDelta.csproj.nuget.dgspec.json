@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\LENOVO\\OneDrive\\Desktop\\Nuget\\NdjsonDelta\\NdjsonDelta.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.2",
       "restore": {
         "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\Nuget\\NdjsonDelta\\NdjsonDelta.csproj",
         "projectName": "NdjsonDelta",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.19.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -79,6 +85,12 @@
         },
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.19.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NdjsonDelta</id>
+    <version>1.0.1</version>
+    <authors>YourName</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings.</description>
+    <tags>ndjson delta diff json nuget</tags>
+    <repository type="git" url="https://github.com/SARAN2991/ndjson-delta" commit="374fda57ed9e1741a667e441fa5a2d058ea9a00d" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\bin\Release\net6.0\NdjsonDelta.dll" target="lib\net6.0\NdjsonDelta.dll" />
+    <file src="C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\bin\Release\net8.0\NdjsonDelta.dll" target="lib\net8.0\NdjsonDelta.dll" />
+  </files>
+</package>

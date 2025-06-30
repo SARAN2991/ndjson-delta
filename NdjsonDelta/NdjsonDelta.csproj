@@ -8,11 +8,11 @@
 
   <PropertyGroup>
     <PackageId>NdjsonDelta</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
     <Authors>YourName</Authors>
     <Company>YourCompany</Company>
-    <Description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings.</Description>
-    <PackageTags>ndjson;delta;diff;json;nuget</PackageTags>
+    <Description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings. Supports local files and Azure Blob Storage.</Description>
+    <PackageTags>ndjson;delta;diff;json;nuget;azure;blob</PackageTags>
     <RepositoryUrl>https://github.com/SARAN2991/ndjson-delta</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -23,6 +23,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Update="..\.github\copilot-instructions.md" Pack="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
   </ItemGroup>
 
 </Project>
