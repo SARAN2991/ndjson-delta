@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["build", "NdjsonDelta/", "-c", "Release"],
+            "group": "build",
+            "problemMatcher": ["$msCompile"]
+        },
+        {
+            "label": "pack",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["pack", "NdjsonDelta/", "-c", "Release", "-o", "./nupkg"],
+            "group": "build",
+            "problemMatcher": ["$msCompile"]
+        }
+    ]
+}
