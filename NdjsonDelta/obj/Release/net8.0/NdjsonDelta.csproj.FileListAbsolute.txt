@@ -10,3 +10,4 @@ C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net8.0\NdjsonDelt
 C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net8.0\refint\NdjsonDelta.dll
 C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net8.0\NdjsonDelta.pdb
 C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net8.0\ref\NdjsonDelta.dll
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net8.0\NdjsonDelta.csproj.AssemblyReference.cache
