@@ -8,7 +8,7 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings. Supports local files and Azure Blob Storage.</description>
     <tags>ndjson delta diff json nuget azure blob</tags>
-    <repository type="git" url="https://github.com/SARAN2991/ndjson-delta" commit="da8fafe56440d36b617e1550b5d60b5b7dd65572" />
+    <repository type="git" url="https://github.com/SARAN2991/ndjson-delta" commit="f555dac8e1639899a9a96a2b4cc9aedf8548fb41" />
     <dependencies>
       <group targetFramework="net6.0">
         <dependency id="Azure.Storage.Blobs" version="12.19.1" exclude="Build,Analyzers" />

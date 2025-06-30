@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Compute the delta (added, removed, changed objects) between two NDJSON files or s" +
     "trings. Supports local files and Azure Blob Storage.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+da8fafe56440d36b617e1550b5d60b5b7dd65572")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+f555dac8e1639899a9a96a2b4cc9aedf8548fb41")]
 [assembly: System.Reflection.AssemblyProductAttribute("NdjsonDelta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NdjsonDelta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
