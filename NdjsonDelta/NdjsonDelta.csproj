@@ -13,7 +13,7 @@
     <Company>YourCompany</Company>
     <Description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings.</Description>
     <PackageTags>ndjson;delta;diff;json;nuget</PackageTags>
-    <RepositoryUrl>https://github.com/your-repo/ndjson-delta</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SARAN2991/ndjson-delta</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
