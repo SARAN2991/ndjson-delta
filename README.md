@@ -23,26 +23,26 @@ Suppose you have two NDJSON files containing Azure Digital Twin models and insta
 **topology_v1.ndjson** (Previous version)
 ```json
 {"Section": "Header"}
-{"fileVersion":"1.0.0","author":"TICO","organization":"TICO"}
+{"fileVersion":"1.0.0","author":"XYZ","organization":"XYZ"}
 {"Section": "Models"}
-{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:toyotaindustries:gaudi:asset;1","@type":"Interface","displayName":"Asset"}
+{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:xyzindustries:edge:asset;1","@type":"Interface","displayName":"Asset"}
 {"Section": "Twins"}
-{"$dtId":"MachineA10","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
-{"$dtId":"SensorA14","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:sensor;1"}}
-{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:plant;1"}}
+{"$dtId":"DfgA10","$metadata":{"$model":"dtmi:com:xyzindustries:edge:dfg;1"}}
+{"$dtId":"GhjA14","$metadata":{"$model":"dtmi:com:xyzindustries:edge:ghj;1"}}
+{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:xyzindustries:edge:plant;1"}}
 ```
 
 **topology_v2.ndjson** (Current version)
 ```json
 {"Section": "Header"}
-{"fileVersion":"1.0.1","author":"TICO","organization":"TICO"}
+{"fileVersion":"1.0.1","author":"XYZ","organization":"XYZ"}
 {"Section": "Models"}
-{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:toyotaindustries:gaudi:asset;1","@type":"Interface","displayName":"Asset"}
+{"@context":"dtmi:dtdl:context;2","@id":"dtmi:com:xyzindustries:edge:asset;1","@type":"Interface","displayName":"Asset"}
 {"Section": "Twins"}
-{"$dtId":"MachineA10","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
-{"$dtId":"SensorA15","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:sensor;1"}}
-{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:plant;1"}}
-{"$dtId":"MachineA11","$metadata":{"$model":"dtmi:com:toyotaindustries:gaudi:machine;1"}}
+{"$dtId":"DfgA10","$metadata":{"$model":"dtmi:com:xyzindustries:edge:dfg;1"}}
+{"$dtId":"GhjA15","$metadata":{"$model":"dtmi:com:xyzindustries:edge:ghj;1"}}
+{"$dtId":"Plant301","$metadata":{"$model":"dtmi:com:xyzindustries:edge:plant;1"}}
+{"$dtId":"DfgA11","$metadata":{"$model":"dtmi:com:xyzindustries:edge:dfg;1"}}
 ```
 
 **Sample C# code:**
@@ -91,7 +91,7 @@ class Program
 Added Twins/Models: 2
 Removed Twins/Models: 1
 Changed Items: 1
-Added Twin: MachineA11
+Added Twin: DfgA11
 ```
 
 ## Azure Blob Storage Support
