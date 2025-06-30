@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "NdjsonDelta/1.0.3": {
+      "NdjsonDelta/1.0.4": {
         "dependencies": {
           "Azure.Storage.Blobs": "12.19.1"
         },
@@ -96,7 +96,7 @@
     }
   },
   "libraries": {
-    "NdjsonDelta/1.0.3": {
+    "NdjsonDelta/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

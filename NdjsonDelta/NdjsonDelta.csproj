@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <PackageId>NdjsonDelta</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>YourName</Authors>
     <Company>YourCompany</Company>
     <Description>Compute the delta (added, removed, changed objects) between two NDJSON files or strings. Supports local files and Azure Blob Storage.</Description>
