@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "NdjsonDelta/1.0.0": {
+        "runtime": {
+          "NdjsonDelta.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NdjsonDelta/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

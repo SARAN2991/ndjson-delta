@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wmi7jPS7qbRPIjGy4QZ4H/XVo84t4dR2yU1v7nCareAZKpCOG4122y4q+N90zv6fu0eIPEGzE9Y3MqJCjxiQgw==",
+  "dgSpecHash": "EFeTvDbm681zJ5RB1JgHfv8AxNPGbNW5pMRArwgSvTD6erOusfrmzK87svltongAiZPoavymsKVXD90Emr27rA==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\Nuget\\NdjsonDelta\\NdjsonDelta.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
+  ],
   "logs": []
 }

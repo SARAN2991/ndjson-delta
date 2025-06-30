@@ -1,0 +1,12 @@
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\bin\Release\net6.0\NdjsonDelta.deps.json
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\bin\Release\net6.0\NdjsonDelta.dll
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\bin\Release\net6.0\NdjsonDelta.pdb
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.AssemblyInfoInputs.cache
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.AssemblyInfo.cs
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.sourcelink.json
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.dll
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\refint\NdjsonDelta.dll
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\NdjsonDelta.pdb
+C:\Users\LENOVO\OneDrive\Desktop\Nuget\NdjsonDelta\obj\Release\net6.0\ref\NdjsonDelta.dll
